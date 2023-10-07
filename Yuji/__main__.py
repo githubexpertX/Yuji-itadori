@@ -3,6 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import *
 import random
 import asyncio
+from bs4 import BeautifulSoup
 from os import getenv
 from pyrogram import Client, filters
 from pyrogram.types import *
@@ -213,47 +214,23 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
-@app.on_callback_query(call_back_in_filter('meme'))
-def callback_meme(_, query):
-    if query.data.split(":")[1] == "next":
-        query.message.delete()
-        res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
-        img = res['image']
-        title = res['title']
-        app.send_photo(
-            query.message.chat.id,
-            img,
-            caption=title,
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("Next", callback_data="meme:next")],
-            ]))
+def define(word: str):
+    url = "http://urbandictionary.com/define.php?term=" + word
+    response = get(url)
+    soup = BeautifulSoup(response.text, "html.parser")
+    content = soup.find("div", {"class": "p-5 md:p-8"})
+    word = content.find("div", class_="sm:flex sm:flex-row-reverse")
+    meaning = content.find("div", class_="meaning my-4")
+
+    return {"word": word.text, "meaning": meaning.text}
 
 
-@app.on_message(filters.command('rmeme'))
-def rmeme(_, message):
-    res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
-    img = res['image']
-    title = res['title']
-    app.send_photo(message.chat.id,
-                   img,
-                   caption=title,
-                   reply_markup=InlineKeyboardMarkup([[
-                       InlineKeyboardButton("Next", callback_data="meme:next")
-                   ]]))
+@app.on_message(filters.regex(r"(?i)^define (.*)$"))
+def ok(client, m: Message):
+    word = m.text.replace(m.text.split(" ")[0], "").strip()
+    data = define(word)
+    m.reply(f"**{data['word']}**\n\n{data['meaning']}")
 
-
-@app.on_message(filters.command('webss'))
-async def webss(client, message):
-    user = message.command[1]
-    fuck = f'https://webshot.deam.io/{url}/?delay=2000'
-    await client.send_document(message.chat.id, fuck, caption=f'{url}')
-
-
-help_message.append({"Module_Name": "meme"})
-
-def call_back_in_filter(data):
-    return filters.create(lambda flt, _, query: flt.data in query.data,
-                          data=data)
 
 
 def latest():
