@@ -61,7 +61,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.5)
     await accha.delete()
     accha = await m.reply_photo(ALIVE_PIC,
-    caption = HELPP_TEXT
+    caption = HELPP_TEXT,
     reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton('♡ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♡', url="https://t.me/fuck_uff_XD")]])
   )
