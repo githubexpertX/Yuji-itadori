@@ -17,6 +17,10 @@ import asyncio
 import time
 from pyrogram import *
 from pyrogram.types import *
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
+from pyrogram import filters
+
 # Replace 'YOUR_API_ID' and 'YOUR_API_HASH' with your actual API credentials
 api_id = '28731705'
 api_hash = '7ed8bb45ea845bef652aa0606584f413'
