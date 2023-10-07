@@ -67,7 +67,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", '6561918588:AAE74I_F1bpCi6SltNQHTYClgpM_AThQmNk'
 # Create a Pyrogram client instance
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
-app = TelegramClient('N1', api_id, api_hash).start(bot_token=BOT_TOKEN)
+bot = TelegramClient('N1', api_id, api_hash).start(bot_token=BOT_TOKEN)
 
 ALIVE_PIC = getenv("ALIVE_PIC", 'https://te.legra.ph/file/403acffa5ca195e17112b.jpg')
 
@@ -234,7 +234,7 @@ CUTIE = "https://64.media.tumblr.com/d701f53eb5681e87a957a547980371d2/tumblr_nbj
 SIGMA = "https://te.legra.ph/file/7ff836ce726f9efce590c.mp4"
 
 
-@app.on(events.NewMessage(pattern="/horny ?(.*)"))
+@bot.on(events.NewMessage(pattern="/horny ?(.*)"))
 async def horny(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -244,7 +244,7 @@ async def horny(e):
     await e.reply(HORNY, buttons=BUTTON, file=HOT)
 
 
-@app.on(events.NewMessage(pattern="/gay ?(.*)"))
+@bot.on(events.NewMessage(pattern="/gay ?(.*)"))
 async def gay(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -254,7 +254,7 @@ async def gay(e):
     await e.reply(GAY, buttons=BUTTON, file=SMEXY)
 
 
-@app.on(events.NewMessage(pattern="/lezbian ?(.*)"))
+@bot.on(events.NewMessage(pattern="/lezbian ?(.*)"))
 async def lezbian(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -264,7 +264,7 @@ async def lezbian(e):
     await e.reply(FEK, buttons=BUTTON, file=LEZBIAN)
 
 
-@app.on(events.NewMessage(pattern="/boob ?(.*)"))
+@bot.on(events.NewMessage(pattern="/boob ?(.*)"))
 async def boob(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -274,7 +274,7 @@ async def boob(e):
     await e.reply(BOOBS, buttons=BUTTON, file=BIGBALL)
 
 
-@app.on(events.NewMessage(pattern="/cock ?(.*)"))
+@bot.on(events.NewMessage(pattern="/cock ?(.*)"))
 async def cock(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -284,7 +284,7 @@ async def cock(e):
     await e.reply(COCK, buttons=BUTTON, file=LANG)
 
 
-@app.on(events.NewMessage(pattern="/cute ?(.*)"))
+@bot.on(events.NewMessage(pattern="/cute ?(.*)"))
 async def cute(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
@@ -294,7 +294,7 @@ async def cute(e):
     await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 
-@app.on(events.NewMessage(pattern="/chad ?(.*)"))
+@bot.on(events.NewMessage(pattern="/chad ?(.*)"))
 async def chad(e):
     user_id = e.sender.id
     user_name = e.sender.first_name
