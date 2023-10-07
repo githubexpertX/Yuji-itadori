@@ -63,11 +63,11 @@ api_hash = '7ed8bb45ea845bef652aa0606584f413'
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
 bot_token = '6561918588:AAE74I_F1bpCi6SltNQHTYClgpM_AThQmNk'
-
+BOT_TOKEN = getenv("BOT_TOKEN", '6561918588:AAE74I_F1bpCi6SltNQHTYClgpM_AThQmNk')
 # Create a Pyrogram client instance
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
-app = TelegramClient("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
+app = TelegramClient('N1', api_id, api_hash).start(bot_token=BOT_TOKEN)
 
 ALIVE_PIC = getenv("ALIVE_PIC", 'https://te.legra.ph/file/403acffa5ca195e17112b.jpg')
 
