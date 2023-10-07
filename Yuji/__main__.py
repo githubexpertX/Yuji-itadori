@@ -58,6 +58,9 @@ EMOJIOS = [
 
 help_message = []
 
+OWNER = 65299686966529968696
+
+
       
       
       
