@@ -20,6 +20,12 @@ from pyrogram.types import *
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from pyrogram import filters
+import os
+import asyncio
+from pyrogram import filters
+from pyrogram.types import Message
+from pymongo import MongoClient
+from Yuji.db import MONGO_URL as db_url
 
 # Replace 'YOUR_API_ID' and 'YOUR_API_HASH' with your actual API credentials
 api_id = '28731705'
