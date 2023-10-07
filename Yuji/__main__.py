@@ -53,7 +53,6 @@ from telethon import __version__ as tlhver
 import random
 from datetime import datetime
 from pyrogram import filters
-from pyrogram.enums import ChatType
 
 
 
