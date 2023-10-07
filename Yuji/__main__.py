@@ -279,13 +279,13 @@ def ban(_, message):
                 ],
             ]))
 
-    elif reply.from_user.id == 825664681:
+    elif reply.from_user.id == 6647321265:
         message.reply('This Person is my owner!')
 
     elif reply.from_user.id in sudos:
         message.reply("This Person is my sudo user !")
 
-    elif message.from_user.id == 825664681 or message.from_user.id in sudos:
+    elif message.from_user.id == 6647321265 or message.from_user.id in sudos:
         user = reply.from_user.username if not None else reply.from_user.id
         app.kick_chat_member(message.chat.id,
                              message.reply_to_message.from_user.id)
