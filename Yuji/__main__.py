@@ -28,6 +28,7 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeybo
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from pyrogram import filters
 import os
+from pyrogram.enums import ChatType
 import asyncio
 from typing import Dict, Union
 from pyrogram import filters
