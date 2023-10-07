@@ -64,7 +64,7 @@ api_hash = '7ed8bb45ea845bef652aa0606584f413'
 
 # Replace 'YOUR_BOT_TOKEN' with your actual bot token
 bot_token = '6338221023:AAF7XDPQv6p6ebWdunT1tcCLDdsY1mBy_KA'
-BOT_TOKEN = getenv("BOT_TOKEN", '6338221023:AAF7XDPQv6p6ebWdunT1tcCLDdsY1mBy_KA
+BOT_TOKEN = getenv("BOT_TOKEN", '6338221023:AAF7XDPQv6p6ebWdunT1tcCLDdsY1mBy_KA')
 # Create a Pyrogram client instance
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
@@ -436,7 +436,7 @@ def bothelp(_, message):
                        reply_markup=InlineKeyboardMarkup([[
                            InlineKeyboardButton(
                                "Pm me for more details",
-                               url="t.me/@Testing_pydroid3_robot?start=help")
+                               url="t.me/YuJi_ItAdOrI_RoBoT?start=help")
                        ]]))
 
 
