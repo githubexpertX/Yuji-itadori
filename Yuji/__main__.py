@@ -26,6 +26,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from pymongo import MongoClient
 from Yuji.db import MONGO_URL as db_url
+from typing import List, Any
 
 # Replace 'YOUR_API_ID' and 'YOUR_API_HASH' with your actual API credentials
 api_id = '28731705'
@@ -65,6 +66,38 @@ async def restart(client, m: Message):
     reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton('♡ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♡', url="https://t.me/fuck_uff_XD")]])
   )
+
+
+HELPP_TEXT = """ʏᴏ, ʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ ʜᴇʀᴇ ᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ written ᴏɴ ᴘʏʀᴏɢʀᴀᴍ ʟɪʙʀᴀʀʏ 
+
+ᴄʜᴇᴄᴋ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ 
+
+ʀᴇᴘᴏʀᴛ ʙᴜɢs ᴀᴛ - @fuck_uff_XD"""
+
+
+@app.on_message(filters.command('help') | filters.command('help@KomiSanRobot'))
+def bothelp(_, message):
+    if message.chat.type == "private":
+        keyboard = []
+        for x in help_message:
+            keyboard.append([
+                InlineKeyboardButton(f"{x['Module_Name']}",
+                                     callback_data=f"help:{x['Module_Name']}")
+            ])
+
+        bot.send_message(message.chat.id,
+                         HELPP_TEXT,
+                         reply_markup=InlineKeyboardMarkup(keyboard))
+
+    else:
+        bot.send_photo(message.chat.id,
+                       "https://telegra.ph/file/769474503795f6d4f406c.jpg",
+                       caption=HELPP_TEXT,
+                       reply_markup=InlineKeyboardMarkup([[
+                           InlineKeyboardButton(
+                               "Pm me for more details",
+                               url="t.me/@Testing_pydroid3_robot?start=help")
+                       ]]))
     
 
 users_db = MongoClient(db_url)['users']
