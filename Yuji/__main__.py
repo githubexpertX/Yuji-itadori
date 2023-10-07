@@ -10,10 +10,6 @@ logging.basicConfig(
 )
 
 
-def main():
-    app.run()
-    app.send_message(-1001954317013, "I'm Now online")
+print("now im alive babe")
 
-
-if __name__ == "__main__":
-    main()
+app.run()
