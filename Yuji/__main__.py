@@ -210,6 +210,19 @@ async def eye(client, message):
     await message.reply_text(choice(EYES))
 
 
+@app.on_message(filters.command('id'))
+def ids(_, message):
+    reply = message.reply_to_message
+    if reply:
+        message.reply_text(
+            f"**Your ID**: `{message.from_user.id}`\n**{reply.from_user.first_name}'s ID**: `{reply.from_user.id}`\n**Chat ID**: `{message.chat.id}`"
+        )
+    else:
+        message.reply(
+            f"**Your id**: `{message.from_user.id}`\n**chat id**: `{message.chat.id}`"
+        )
+
+
 HELPP_TEXT = """ʏᴏ, ʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ ʜᴇʀᴇ ᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ written ᴏɴ ᴘʏʀᴏɢʀᴀᴍ ʟɪʙʀᴀʀʏ 
 
 ᴄʜᴇᴄᴋ ᴛʜᴇ ғᴏʟʟᴏᴡɪɴɢ ʙᴜᴛᴛᴏɴs ғᴏʀ ᴍᴏʀᴇ ɪɴғᴏ 
