@@ -16,12 +16,8 @@ help_message = []
 #         help_message.append({"Module_Name": module})
 #         help.update({f"{module}_help": help})
 
-api_id = '28731705'
-api_hash = '7ed8bb45ea845bef652aa0606584f413'
-
-# Replace 'YOUR_BOT_TOKEN' with your actual bot token
-bot_token = '6561918588:AAE74I_F1bpCi6SltNQHTYClgpM_AThQmNk'
-
-
-# Create a Pyrogram client instance
-app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+app = Client('bot',
+             api_id=os.environ.get('28731705'),
+             api_hash=os.environ['7ed8bb45ea845bef652aa0606584f413'],
+             bot_token=os.environ['6561918588:AAE74I_F1bpCi6SltNQHTYClgpM_AThQmNk'],
+             plugins=dict(root=f"yuji/plugins"))
