@@ -47,6 +47,7 @@ jikanpy
 regex
 bleach
 wikipedia
+pyrogram.enums
 telethon
 telegraph
 telegram
