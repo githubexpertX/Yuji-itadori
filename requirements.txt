@@ -44,8 +44,6 @@ Pillow>=4.2.0
 CurrencyConverter
 google_trans_new
 jikanpy
-
-
 regex
 bleach
 wikipedia
@@ -74,12 +72,6 @@ jikanpy==4.3.2
 lxml==4.9.3
 markdown2==2.4.10
 motor
-
-
-
-
-
-
 pykeyboard
 pynewtonmath
 pyrate-limiter
@@ -93,9 +85,6 @@ telegraph
 telethon
 tgcrypto
 wikipedia
-yt_dlp 
-youtube_search 
-youtube_search_python
 nekos.py
 wget
 fontTools
