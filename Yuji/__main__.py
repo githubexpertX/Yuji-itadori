@@ -45,7 +45,6 @@ from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeybo
 from pyrogram.types.messages_and_media import message
 from bs4 import BeautifulSoup
 import urllib
-from GroupMenter import telethn as tbot
 import glob
 import io
 import os
