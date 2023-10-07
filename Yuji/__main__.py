@@ -382,13 +382,13 @@ class Help_Text:
 • /purge - __purge the messages__
 
 """,
-        "meme_help": """
+          "meme_help": """
 • /rmeme - __to get random anime memes__
-""",
+"""
           " alive_help": """
 • /alive - __to check bot alive or not__
 """
-        "notes_help": """
+          "notes_help": """
 • /addnote note __name text - to add a note__\n•/delnote __NoteName - to delete a note__\n•/getnote __NoteName - get a note or use #notename__\n• /notes - __to get a list of notes in your chats__
 """
         "extra_help": """• /watchorder __anime name - to get watchorder__
