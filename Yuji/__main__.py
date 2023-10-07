@@ -44,6 +44,12 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from re import escape
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
+from pyrogram import __version__ as pyrover
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from telegram import __version__ as telever
+from telethon import __version__ as tlhver
+
 
 
 # Replace 'YOUR_API_ID' and 'YOUR_API_HASH' with your actual API credentials
@@ -215,6 +221,25 @@ async def run(client, message):
 @app.on_message(filters.command('eye'))
 async def eye(client, message):
     await message.reply_text(choice(EYES))
+
+@app.on_message(filters.command("alive"))
+async def awake(_, message: Message):
+    TEXT = f"**ʜᴇʏ {message.from_user.mention},\nɪ ᴀᴍ {BOT_NAME}**\n━━━━━━━━━━━━━━━━━━━\n\n"
+    TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴋɪɴɢ](tg://user?id=6647321265)\n\n"
+    TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n"
+    TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n"
+    TEXT += f"» **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n━━━━━━━━━━━━━━━━━\n"
+    BUTTON = [
+        [
+          InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/fuck_uff_XD"),
+        ]
+    ]
+    await message.reply_photo(
+        photo=ALIVE_PIC,
+        caption=TEXT,
+        reply_markup=InlineKeyboardMarkup(BUTTON),
+    )
+
 
 
 def define(word: str):
