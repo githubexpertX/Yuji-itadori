@@ -27,6 +27,8 @@ from pyrogram.types import Message
 from pymongo import MongoClient
 from Yuji.db import MONGO_URL as db_url
 from typing import List, Any
+from telegraph import upload_file
+from pyrogram import filters
 
 # Replace 'YOUR_API_ID' and 'YOUR_API_HASH' with your actual API credentials
 api_id = '28731705'
@@ -98,6 +100,20 @@ def bothelp(_, message):
                                "Pm me for more details",
                                url="t.me/@Testing_pydroid3_robot?start=help")
                        ]]))
+
+
+@app.on_message(filters.command('ul'))
+def ul(_, message):
+    reply = message.reply_to_message
+    if reply.media:
+        i = message.reply("**Downloading....**")
+        path = reply.download()
+        fk = upload_file(path)
+        for x in fk:
+            url = "https://telegra.ph" + x
+
+        i.edit(f'Your telegraph [link]({url})', disable_web_page_preview=True)
+
     
 
 users_db = MongoClient(db_url)['users']
