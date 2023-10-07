@@ -1,4 +1,3 @@
-from Yuji import app
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import *
