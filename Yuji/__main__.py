@@ -266,7 +266,7 @@ def lates(_, message):
                            InlineKeyboardButton("Refresh", callback_data="fk")
                        ]]))
 
-@bot.on_callback_query(call_back_in_filter("fk"))
+@app.on_callback_query(call_back_in_filter("fk"))
 def callbackk(_, query):
 
     if query.data == "fk":
