@@ -224,7 +224,7 @@ async def eye(client, message):
 
 @app.on_message(filters.command("alive"))
 async def awake(_, message: Message):
-    TEXT = f"**ʜᴇʏ {message.from_user.mention},\nɪ ᴀᴍ {BOT_NAME}**\n━━━━━━━━━━━━━━━━━━━\n\n"
+    TEXT = f"**ʜᴇʏ {message.from_user.mention},\nɪ ᴀᴍ ʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ**\n━━━━━━━━━━━━━━━━━━━\n\n"
     TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ :** [ᴋɪɴɢ](tg://user?id=6647321265)\n\n"
     TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n"
     TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n"
