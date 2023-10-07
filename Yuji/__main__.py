@@ -51,6 +51,9 @@ HELPP_TEXT = ("ʜᴇʟʟᴏ [sɪʀ](tg://settings)\n\nʏᴜᴊɪ ɪᴛᴀᴅᴏ�
 
 EMOJIOS = [ 
       "ʏᴏᴏᴏᴏ ♡"]
+
+help_message = []
+
       
       
       
