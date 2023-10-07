@@ -54,7 +54,6 @@ telegraph
 telegram
 unidecode
 pyfiglet
-async_pymongo
 aiofiles==23.2.1
 aiohttp==3.8.5
 apscheduler==3.6.3
