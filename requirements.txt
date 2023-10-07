@@ -53,6 +53,5 @@ nekos.py
 wget
 fontTools
 pybase64
-py-tgcalls==0.8.6
 spotipy
 gtts
