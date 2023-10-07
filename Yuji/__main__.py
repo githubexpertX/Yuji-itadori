@@ -268,27 +268,6 @@ def lates(_, message):
 
 
 
-
-@app.on_callback_query(call_back_in_filter("fk"))
-def callbackk(_, query):
-
-    if query.data == "fk":
-        mm = latest()
-        time_ = datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M")
-
-        try:
-            query.message.edit(f"Today\'s Schedule:\nTZ: Japan\n{mm}",
-                               reply_markup=InlineKeyboardMarkup([[
-                                   InlineKeyboardButton("Refresh",
-                                                        callback_data="fk")
-                               ]]))
-            query.answer("Refreshed!")
-
-        except:
-            query.answer("Refreshed!")
-
-
-
 @app.on_message(filters.command('paste'))
 def pastex(_, message):
     text = message.reply_to_message
