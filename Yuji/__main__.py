@@ -10,6 +10,7 @@ from pyrogram.types import *
 import random
 import asyncio
 from random import choice
+from asyncio import coroutine 
 from requests import get
 import time, datetime
 from redis import Redis
