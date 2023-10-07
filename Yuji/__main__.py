@@ -261,28 +261,7 @@ def latest():
 @app.on_message(filters.command('latest'))
 def lates(_, message):
     mm = latest()
-    message.reply_text(f"Today's Schedule:\nTZ: Japan\n{mm}",
-                       reply_markup=InlineKeyboardMarkup([[
-                           InlineKeyboardButton("Refresh", callback_data="fk")
-                       ]]))
-
-@app.on_callback_query(call_back_in_filter("fk"))
-def callbackk(_, query):
-
-    if query.data == "fk":
-        mm = latest()
-        time_ = datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M")
-
-        try:
-            query.message.edit(f"Today\'s Schedule:\nTZ: Japan\n{mm}",
-                               reply_markup=InlineKeyboardMarkup([[
-                                   InlineKeyboardButton("Refresh",
-                                                        callback_data="fk")
-                               ]]))
-            query.answer("Refreshed!")
-
-        except:
-            query.answer("Refreshed!")
+    message.reply_text(f"Today's Schedule:\nTZ: Japan\n{mm}")
 
 
 
