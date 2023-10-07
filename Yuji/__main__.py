@@ -484,8 +484,8 @@ class Help_Text:
 ➻ /cute - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄᴜᴛᴇɴᴇꜱꜱ
 
 ➻ /chad - ᴄʜᴇᴄᴋ ʜᴏᴡ ᴄʜᴀᴅ ʏᴏᴜ ᴀʀᴇ
-"""
-          "meme_help": """
+""",
+          "meme _help": """
 ➻ /rmeme - __to get random anime memes__
 """,
           "alive_help": """
