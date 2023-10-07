@@ -38,47 +38,32 @@ bot_token = '6561918588:AAE74I_F1bpCi6SltNQHTYClgpM_AThQmNk'
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 
-@app.on_message(
-    filters.command('start') | filters.command('start@KomiSanRobot'))
-def start(_, message):
-    try:
-        if message.chat.type == "private":
-            users = col.find({})
-            mfs = []
-            for x in users:
-                mfs.append(x['user_id'])
-            if message.from_user.id not in mfs:
-                user = {"type": "user", "user_id": message.from_user.id}
-                col.insert_one(user)
+ALIVE_PIC = getenv("ALIVE_PIC", 'https://te.legra.ph/file/403acffa5ca195e17112b.jpg')
 
-        else:
-            users = grps.find({})
-            mfs = []
-            for x in users:
-                mfs.append(x['chat_id'])
-            if message.chat.id not in mfs:
-                grp = {"type": "group", "chat_id": message.chat.id}
-                grps.insert_one(grp)
+HELPP_TEXT = ("ʜᴇʟʟᴏ\n\nʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ ʜᴇʀᴇ\nɪᴍ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ\nɪ ᴡɪʟʟ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ \n\nɪғ ʏᴏᴜ ɴᴏᴛɪᴄᴇ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ ʀᴇᴘᴏʀᴛ ɪᴛ ɪɴ ᴍʏ [sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ](@fuck_uff_XD).")
 
-    except Exception as e:
-        app.send_message(-1001954317013, f"error in adding stats:\n\n{e}")
-
-    if message.chat.type == "private" and not "help" in message.text:
-
-        app.send_message(
-            message.chat.id,
-            f"ʜᴇʟʟᴏ {message.from_user.mention}\n\nʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ ʜᴇʀᴇ\nɪᴍ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ\nɪ ᴡɪʟʟ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ \n\nɪғ ʏᴏᴜ ɴᴏᴛɪᴄᴇ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ ʀᴇᴘᴏʀᴛ ɪᴛ ɪɴ ᴍʏ [sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ](https://t.me/NiGhT_StARs_ll)",
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton('help', callback_data="help")]]))
-    if "help" in message.text:
-        app.send_message(message.chat.id,
-                         "Help",
-                         reply_markup=InlineKeyboardMarkup([[
-                             InlineKeyboardButton('help', callback_data="help")
-                         ]]))
-    if not message.chat.type == "private":
-        message.reply("ʜᴇʟʟᴏ ᴛʜᴇʀᴇ ɪᴍ ʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ")
-
+EMOJIOS = [ 
+      "ʏᴏᴏᴏᴏ ♡"]
+      
+      
+      
+@app.on_message(filters.command(["start"]))
+async def restart(client, m: Message):
+    accha = await m.reply_text(
+                text = random.choice(EMOJIOS),
+    )
+    await asyncio.sleep(0.5)
+    await accha.edit("ʟᴇ ᴍᴇ ɪɴᴛʀᴏᴅᴜᴄᴇ ᴍʏsᴇʟғ...")
+    await asyncio.sleep(0.6)
+    await accha.edit("ɪ'ᴍ ʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ ♡")
+    await asyncio.sleep(0.7)
+    await accha.edit("ɪ ᴀᴍ ᴀ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ. ✦")
+    await asyncio.sleep(0.5)
+    await accha.delete()
+    accha = await m.reply_photo(ALIVE_PIC,
+    caption = HELPP_TEXT
+                )
+    
 
 users_db = MongoClient(db_url)['users']
 col = users_db['USER']
