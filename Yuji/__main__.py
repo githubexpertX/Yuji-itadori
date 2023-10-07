@@ -17,6 +17,8 @@ from os import getenv
 import pymongo
 from pyrogram import filters
 import os
+import logging
+from telethon import TelegramClient
 import re
 import asyncio
 import time
