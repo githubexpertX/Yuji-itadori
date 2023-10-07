@@ -4,6 +4,7 @@ from nksama import bot
 from pyrogram import filters
 from yuji.plugins.stats import col
 from yuji.plugins.stats import users_db, grps
+from nksama import help_message
 
 
 @bot.on_message(
