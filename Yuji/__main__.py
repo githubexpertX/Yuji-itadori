@@ -12,4 +12,5 @@ logging.basicConfig(
 
 print("now im alive babe")
 
-app.run()
+app.start()
+main()
