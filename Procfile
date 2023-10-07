@@ -1,1 +1,1 @@
-worker : python3 -m yuji
+worker : python -m yuji
