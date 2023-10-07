@@ -31,7 +31,6 @@ from telegraph import upload_file
 from pyrogram import filters
 from os import name
 from pyrogram.methods import messages
-from nksama import bot, help_message
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
