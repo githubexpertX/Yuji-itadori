@@ -213,6 +213,44 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
+@app.on_callback_query(call_back_in_filter('meme'))
+def callback_meme(_, query):
+    if query.data.split(":")[1] == "next":
+        query.message.delete()
+        res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
+        img = res['image']
+        title = res['title']
+        app.send_photo(
+            query.message.chat.id,
+            img,
+            caption=title,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Next", callback_data="meme:next")],
+            ]))
+
+
+@app.on_message(filters.command('rmeme'))
+def rmeme(_, message):
+    res = requests.get('https://nksamamemeapi.pythonanywhere.com').json()
+    img = res['image']
+    title = res['title']
+    app.send_photo(message.chat.id,
+                   img,
+                   caption=title,
+                   reply_markup=InlineKeyboardMarkup([[
+                       InlineKeyboardButton("Next", callback_data="meme:next")
+                   ]]))
+
+
+@app.on_message(filters.command('webss'))
+async def webss(client, message):
+    user = message.command[1]
+    fuck = f'https://webshot.deam.io/{url}/?delay=2000'
+    await client.send_document(message.chat.id, fuck, caption=f'{url}')
+
+
+help_message.append({"Module_Name": "meme"})
+
 def call_back_in_filter(data):
     return filters.create(lambda flt, _, query: flt.data in query.data,
                           data=data)
