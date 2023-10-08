@@ -8,6 +8,17 @@ from time import sleep
 import os 
 import requests 
 import yt_dlp 
+import inspect
+import glob
+import io
+import os
+import random
+import requests
+from PIL import Image, ImageDraw, ImageFont
+import re
+from pathlib import Path
+from pymongo import MongoClient
+from telethon import events
 from pyrogram import filters 
 from youtube_search import YoutubeSearch 
 import traceback
@@ -297,6 +308,7 @@ async def run(client, message):
 @app.on_message(filters.command('eye'))
 async def eye(client, message):
     await message.reply_text(choice(EYES))
+
 
 def time_to_seconds(time): 
      stringt = str(time) 
