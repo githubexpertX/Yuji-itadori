@@ -9,6 +9,14 @@ from pyrogram.types import Message
 from telethon import TelegramClient
 from functools import wraps
 from telegram import ChatAction
+from pyrogram import Client , filters
+import wget
+import os
+from pyrogram.types import InlineKeyboardButton , InlineKeyboardMarkup
+import psutil
+import requests
+import json
+import subprocess
 from telegram.error import BadRequest
 from pyrogram import Client, filters
 from pyrogram1 import Client as Client1
@@ -119,6 +127,10 @@ help_message = []
 OWNER = 6647321265
 
 OWNER_ID = int(getenv("OWNER_ID",'6647321265'))
+
+kid_z = 6529968696
+
+king_z = [6647321265]
       
 @app.on_message(filters.command(["start"]))
 async def restart(client, m: Message):
@@ -263,6 +275,27 @@ async def run(client, message):
 @app.on_message(filters.command('eye'))
 async def eye(client, message):
     await message.reply_text(choice(EYES))
+
+@app.on_message(filters.command(["ban"]))
+async def ban (client , message):
+    if message.chat.type == "private":
+        await message.reply_text("admins commands can only be used in groups where i am admin with all necessary rights")
+    else:
+        try:
+            get =await client.get_chat_member(message.chat.id,message.from_user.id) 
+            status = get. status 
+            chat_id = message.chat.id
+            message_id = message.reply_to_message.message_id
+            cmd_user = ["administrator","creator"] 
+            if status in cmd_user:
+                chat_id = message.chat.id
+                user_id  = message.reply_to_message.from_user.id
+                await app.ban_chat_member(chat_id, user_id)
+                await message.reply_text(text= "**BANNED SUCCESFULLY**")
+            else:
+                await message.reply_text(text = "** YOU ARE NOT A ADMIN IN THIS CHAT **")
+        except Exception as e:
+            await message.reply_text(e)
 
 loveShayri = [
     "Meri chahat dekhni hai? \nTo mere dil par apna dil rakhkar dekh\nteri dhadkan naa bhadjaye to meri mohabbat thukra dena...",
