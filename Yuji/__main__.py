@@ -252,7 +252,7 @@ async def add_served_user(user_id: int):
     return await usersdb.insert_one({"user_id": user_id})
 
 
-@ap.on_message(filters.private & ~filters.service, group=1)
+@app.on_message(filters.private & ~filters.service, group=1)
 async def users_sql(_, msg: Message):
     await add_served_user(msg.from_user.id)
 
