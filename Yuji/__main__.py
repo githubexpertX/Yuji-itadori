@@ -231,7 +231,7 @@ mongo = MongoClient(db_url)
 db = mongo.StringGen
 
 
-@app.on_message(filter("string"))
+@app.on_message(filters.command("string"))
 async def start(app: Client, msg: Message):
     me2 = (await app.get_me()).mention
     await app.send_message(
