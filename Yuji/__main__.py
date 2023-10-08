@@ -843,8 +843,6 @@ def callback_help(_, query):
             
         query.message.edit(HELPP_TEXT,
                                reply_markup=InlineKeyboardMarkup(keyboard))
-        except:
-        pass
 
 
 
