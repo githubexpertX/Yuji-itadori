@@ -132,8 +132,7 @@ async def restart(client, m: Message):
     accha = await m.reply_photo(ALIVE_PIC,
     caption = HELPP_TEXT,
     reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton('♡ ᴅᴇᴠᴇʟᴏᴘᴇʀ ♡', url="https://t.me/fuck_uff_XD")]],
-                [[InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ', url="https://t.me/YuJi_ItAdOrI_RoBoT?startgroup=true")]])
+                [[InlineKeyboardButton('♡ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ♡', url="https://t.me/YuJi_ItAdOrI_RoBoT?startgroup=true")]])
   )
 
 
