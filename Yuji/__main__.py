@@ -5,6 +5,37 @@ import random
 import asyncio
 from bs4 import BeautifulSoup
 from os import getenv
+from pyrogram.types import Message
+from telethon import TelegramClient
+from pyrogram import Client, filters
+from pyrogram1 import Client as Client1
+from asyncio.exceptions import TimeoutError
+from telethon.sessions import StringSession
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import (
+    ApiIdInvalid,
+    PhoneNumberInvalid,
+    PhoneCodeInvalid,
+    PhoneCodeExpired,
+    SessionPasswordNeeded,
+    PasswordHashInvalid
+)
+from pyrogram1.errors import (
+    ApiIdInvalid as ApiIdInvalid1,
+    PhoneNumberInvalid as PhoneNumberInvalid1,
+    PhoneCodeInvalid as PhoneCodeInvalid1,
+    PhoneCodeExpired as PhoneCodeExpired1,
+    SessionPasswordNeeded as SessionPasswordNeeded1,
+    PasswordHashInvalid as PasswordHashInvalid1
+)
+from telethon.errors import (
+    ApiIdInvalidError,
+    PhoneNumberInvalidError,
+    PhoneCodeInvalidError,
+    PhoneCodeExpiredError,
+    SessionPasswordNeededError,
+    PasswordHashInvalidError
+)
 from pyrogram import Client, filters
 from pyrogram.types import *
 import random
@@ -249,11 +280,11 @@ async def start(app: Client, msg: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(text="✦ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ✦", callback_data="generate")
+                    InlineKeyboardButton(text=" ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ", callback_data="generate")
                 ],
                 [
-                    InlineKeyboardButton("♡ sᴜᴘᴘᴏʀᴛ ♡", url="https://t.me/fuck_uff_XD"),
-                    InlineKeyboardButton("დ ᴀɴʏ ᴇʀʀᴏʀs დ", url="https://t.me/fuck_uff_XD")
+                    InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url="https://t.me/fuck_uff_XD"),
+                    InlineKeyboardButton(" ᴀɴʏ ᴇʀʀᴏʀs ", url="https://t.me/fuck_uff_XD")
                 ]
             ]
         ),
@@ -296,21 +327,21 @@ ERROR_MESSAGE = "ᴡᴛғ ! sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ. \n\n
 ask_ques = "**» ▷ ᴄʜᴏᴏsᴇ ᴛʜᴇ sᴛʀɪɴɢ ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴᴛ ✔️ : :**"
 buttons_ques = [
     [
-        InlineKeyboardButton("✰ ᴘʏʀᴏɢʀᴀᴍ ✰", callback_data="pyrogram1"),
-        InlineKeyboardButton("🪴ᴘʏʀᴏɢʀᴀᴍ ᴠ2🪴", callback_data="pyrogram"),
+        InlineKeyboardButton(" ᴘʏʀᴏɢʀᴀᴍ ", callback_data="pyrogram1"),
+        InlineKeyboardButton("ᴘʏʀᴏɢʀᴀᴍ ᴠ2", callback_data="pyrogram"),
     ],
     [
-        InlineKeyboardButton("🍷ᴛᴇʟᴇᴛʜᴏɴ🍷", callback_data="telethon"),
+        InlineKeyboardButton("ᴛᴇʟᴇᴛʜᴏɴ", callback_data="telethon"),
     ],
     [
-        InlineKeyboardButton("✬ ᴘʏʀᴏɢʀᴀᴍ ʙᴏᴛ ✬", callback_data="pyrogram_bot"),
-        InlineKeyboardButton("✭ ᴛᴇʟᴇᴛʜᴏɴ ʙᴏᴛ ✦", callback_data="telethon_bot"),
+        InlineKeyboardButton(" ᴘʏʀᴏɢʀᴀᴍ ʙᴏᴛ ", callback_data="pyrogram_bot"),
+        InlineKeyboardButton(" ᴛᴇʟᴇᴛʜᴏɴ ʙᴏᴛ ", callback_data="telethon_bot"),
     ],
 ]
 
 gen_button = [
     [
-        InlineKeyboardButton(text="✫ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ✫", callback_data="generate")
+        InlineKeyboardButton(text=" ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ ", callback_data="generate")
     ]
 ]
 
@@ -324,9 +355,9 @@ async def main(_, msg):
 
 async def generate_session(bot: Client, msg: Message, telethon=False, old_pyro: bool = False, is_bot: bool = False):
     if telethon:
-        ty = "🍷ᴛᴇʟᴇᴛʜᴏɴ🍷"
+        ty = "ᴛᴇʟᴇᴛʜᴏɴ"
     else:
-        ty = "✯ ᴘʏʀᴏɢʀᴀᴍ ✫"
+        ty = " ᴘʏʀᴏɢʀᴀᴍ "
         if not old_pyro:
             ty += " ᴠ2"
     if is_bot:
