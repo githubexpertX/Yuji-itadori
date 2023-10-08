@@ -276,6 +276,21 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
+@app.on_message(filters.command(["stats"]))
+async def stats (client , message):
+    user_id = message.from_user.id
+    if user_id in configs.sudo_users:
+        chat_id = message.chat.id
+        print(os.uname()) 
+        os_unmae = str( os.uname())
+        disk_stat =  str(psutil.disk_usage('/'))
+        print(psutil.disk_usage('/'))
+        status = str( "RUNNING WITH PROBLEMS")
+        await message.reply_text(text = "**\n\nHOSTNAME:** " +os_unmae + " "+ " "  + " "+ " "+ "\n\n **STORAGE**:" + disk_stat +  " " + " " +" " + " "+"\n\n **RUNNING STATUS :**" + status )
+    else:
+        await message.reply_text(text= "you are not a sudo user of the Bot")
+
+
 app.on_message(filters.command(["promote"]))
 async def promote (client , message):
     if message.chat.type == "private":
