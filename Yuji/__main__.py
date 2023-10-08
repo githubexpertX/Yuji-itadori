@@ -225,7 +225,7 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
-mongo = MongoCli(db_url)
+mongo = MongoClient(db_url)
 db = mongo.StringGen
 
 usersdb = db.users
