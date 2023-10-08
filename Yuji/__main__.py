@@ -833,17 +833,18 @@ def callback_help(_, query):
         query.message.edit(HELPP_TEXT,
                            reply_markup=InlineKeyboardMarkup(keyboard))
 
-    if query.data == "back":
+    if query.data.split(":")[1] == "back":
         keyboard = []
         for x in help_message:
             keyboard.append([
                 InlineKeyboardButton(x['Module_Name'],
                                      callback_data=f"help:{x['Module_Name']}")
             ])
-            
-        query.message.edit(HELPP_TEXT,
+        try:
+            query.message.edit(HELPP_TEXT,
                                reply_markup=InlineKeyboardMarkup(keyboard))
-
+        except:
+            pass
 
 
 @app.on_message(filters.command("info"))
