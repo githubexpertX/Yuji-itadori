@@ -726,6 +726,8 @@ help_message.append({"Module_Name": "alive"})
 
 help_message.append({"Module_Name": "sexsy"})
 
+help_message.append({"Module_Name": "string"})
+
 
 class Help_Text:
     helpp = {
@@ -738,6 +740,9 @@ class Help_Text:
 ➻ /purge - __purge the messages__
 
 """,
+          "string_help":"""
+➻ /string - ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴜʀ sᴛʀɪɴɢ sᴇssɪᴏɴ
+   """,
           "sexsy_help": """
 ➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ
 
