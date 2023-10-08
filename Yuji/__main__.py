@@ -128,7 +128,8 @@ OWNER = 6647321265
 
 OWNER_ID = int(getenv("OWNER_ID",'6647321265'))
 
-kid_z = 6529968696
+kid_z = int(getenv("kid_z", '6529968696'))
+
 
 king_z = [6647321265]
       
