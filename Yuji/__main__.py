@@ -10,7 +10,6 @@ import requests
 import yt_dlp 
 import inspect
 import glob
-from __future__ import unicode_literals
 import asyncio
 import os
 import time
