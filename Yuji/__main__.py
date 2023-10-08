@@ -80,6 +80,8 @@ EMOJIOS = [
 help_message = []
 
 OWNER = 6647321265
+
+OWNER_ID = int(getenv("66473212656647321265"))
       
 @app.on_message(filters.command(["start"]))
 async def restart(client, m: Message):
