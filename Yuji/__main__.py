@@ -279,7 +279,7 @@ async def eye(client, message):
 @app.on_message(filters.command(["stats"]))
 async def stats (client , message):
     user_id = message.from_user.id
-    if user_id in configs.sudo_users:
+    if user_id in kid_z:
         chat_id = message.chat.id
         print(os.uname()) 
         os_unmae = str( os.uname())
