@@ -875,6 +875,16 @@ help_message.append({"Module_Name": "string"})
 
 help_message.append({"Module_Name": "shayri"})
 
+help_message.append({"Module_Name": "ban"})
+
+help_message.append({"Module_Name": "unban"})
+
+help_message.append({"Module_Name": "promote"})
+
+help_message.append({"Module_Name": "pin"})
+
+help_message.append({"Module_Name": "title"})
+
 class Help_Text:
     helpp = {
           "admin_help": """
@@ -914,6 +924,21 @@ class Help_Text:
           "shayri_help":"""ꜱᴇɴᴅ ʀᴀɴᴅᴏᴍ ꜱʜᴀʏʀɪ
 ❍ /loveshayri : ʟᴏᴠᴇ ꜱʜᴀʏʀɪ
 """,
+          "ban_help":"""
+➻ /ban - __[ reply to anyone message ] to ban anyone in your group__
+""",
+          "unban_help":"""
+➻ /unban - __[ reply to anyone message ] to unban baned user in your group__
+""",
+          "pin_help":"""
+➻ /pin - __pin messages in your group chats__
+""",
+          "title_help":"""
+➻ /admintitle - __to change anyone admin title__
+""",
+          "promote_help":"""
+➻ /promote - __to promote members in your group__
+""",
           "extra_help": """• /watchorder __anime name - to get watchorder__
 ➻ /quote - __to get random anime quotes__
 ➻ /pat - __ to pat someone__
@@ -926,9 +951,11 @@ class Help_Text:
 """,
           "welcome_help": """• /setwelcome __welcome message - text for welcome__
 ➻ /clearwelcome - __clear welcome message__""",
-        "fun_help": """•/eye
-➻ /run""",
-        "telegraph_help": """• /ul - __Reply to a photo or video__""",
+        "fun_help": """
+➻ /eye - __check and see__
+➻ /run - __check and see__
+""",
+         "telegraph_help": """• /ul - __Reply to a photo or video__""",
     }
 
 fk = Help_Text()
