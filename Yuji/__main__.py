@@ -33,7 +33,7 @@ from pathlib import Path
 from pymongo import MongoClient
 from telethon import events
 from pyrogram import filters 
-from youtube_search import YoutubeSearch, SearchVideos
+from youtube_search import YoutubeSearch 
 import traceback
 import sys
 from html import escape
