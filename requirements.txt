@@ -60,3 +60,4 @@ telegram
 unidecode
 pyfiglet
 yt_dlp
+youtube_search
