@@ -227,6 +227,9 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
+mongo = MongoClient(db_url)
+db = mongo.StringGen
+
 
 @app.on_message(filter("string"))
 async def start(app: Client, msg: Message):
