@@ -60,3 +60,6 @@ telegraph
 telegram
 unidecode
 pyfiglet
+youtube_search_python
+youtube_search
+yt_dlp
