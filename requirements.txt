@@ -62,3 +62,4 @@ pyfiglet
 yt_dlp
 youtube_search
 pickledb
+youtube_search_python
