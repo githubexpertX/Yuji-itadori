@@ -279,7 +279,7 @@ async def eye(client, message):
 @app.on_message(filters.command(["ban"]))
 async def ban (client , message):
     if message.chat.type == "private":
-        await message.reply_text("admins commands can only be used in groups where i am admin with all necessary rights")
+        await message.reply_text("This command is made to be used in group chats, not in pm!")
     else:
         try:
             get =await client.get_chat_member(message.chat.id,message.from_user.id) 
@@ -291,9 +291,9 @@ async def ban (client , message):
                 chat_id = message.chat.id
                 user_id  = message.reply_to_message.from_user.id
                 await app.ban_chat_member(chat_id, user_id)
-                await message.reply_text(text= "**BANNED SUCCESFULLY**")
+                await message.reply_text(text= "Another one bites the dust...!Banned.")
             else:
-                await message.reply_text(text = "** YOU ARE NOT A ADMIN IN THIS CHAT **")
+                await message.reply_text(text = "You need to be an admin to do this.")
         except Exception as e:
             await message.reply_text(e)
 
