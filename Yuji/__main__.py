@@ -1,5 +1,4 @@
 import logging
-from motor.motor_asyncio import AsyncIOMotorClient as MongoCli
 from pyrogram import Client, filters
 from pyrogram.types import *
 import random
