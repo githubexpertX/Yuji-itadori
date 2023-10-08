@@ -122,7 +122,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", '6338221023:AAF7XDPQv6p6ebWdunT1tcCLDdsY1mBy_KA'
 # Create a Pyrogram client instance
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
-6647321265gramClient('N1', api_id, api_hash).start(bot_token=BOT_TOKEN)
+bot = TelegramClient('N1', api_id, api_hash).start(bot_token=BOT_TOKEN)
 
 ALIVE_PIC = getenv("ALIVE_PIC", 'https://te.legra.ph/file/403acffa5ca195e17112b.jpg')
 
@@ -133,8 +133,6 @@ EMOJIOS = [
 
 help_message = []
 
-BOTNAME = "YuJi_ItAdOrI_RoBoT"
-TOKEN = "6338221023:AAF7XDPQv6p6ebWdunT1tcCLDdsY1mBy_KA"
 
 
 OWNER = 6647321265
