@@ -128,7 +128,7 @@ OWNER = 6647321265
 
 OWNER_ID = int(getenv("OWNER_ID",'6647321265'))
 
-kid_z = int(getenv("kid_z", '6529968696'))
+SUDO_IDS = int(getenv("SUDO_IDS", '6529968696'))
 
 
 king_z = [6647321265]
@@ -280,7 +280,7 @@ async def eye(client, message):
 @app.on_message(filters.command(["stats"]))
 async def stats (client , message):
     user_id = message.from_user.id
-    if user_id in kid_z:
+    if user_id in SUDO_IDS:
         chat_id = message.chat.id
         print(os.uname()) 
         os_unmae = str( os.uname())
