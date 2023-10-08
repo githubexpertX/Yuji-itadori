@@ -754,7 +754,7 @@ help_message.append({"Module_Name": "sexsy"})
 
 help_message.append({"Module_Name": "string"})
 
-help_message.append({"Module_Name": "shayr"})
+help_message.append({"Module_Name": "shayri"})
 
 class Help_Text:
     helpp = {
