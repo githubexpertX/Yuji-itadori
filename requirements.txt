@@ -1,7 +1,6 @@
 dnspython==2.2.1
 motor
 psutil==5.9.4
-youtubesearchpython
 pyromod==1.5
 pyrogram1==0.1.0
 python-dotenv==0.21.0
@@ -63,3 +62,4 @@ pyfiglet
 yt_dlp
 youtube_search
 pickledb
+youtubesearchpython
