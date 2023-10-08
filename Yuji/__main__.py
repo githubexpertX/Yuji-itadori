@@ -276,6 +276,29 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
+@app.on_message(filters.command(["unban"]))
+async def unban (client , message):
+    if message.chat.type == "private":
+        await message.reply_text("This command is made to be used in group chats, not in pm!")
+    else:
+        
+        try:
+            get =await client.get_chat_member(message.chat.id,message.from_user.id) 
+            status = get. status 
+            chat_id = message.chat.id
+            message_id = message.reply_to_message.message_id
+            cmd_user = ["administrator","creator"] 
+            if status in cmd_user:
+                chat_id = message.chat.id
+                user_id  = message.reply_to_message.from_user.id
+                await app.unban_chat_member(chat_id, user_id)
+                await message.reply_text(text= "Fine, they can join again.!!")
+            else:
+                await message.reply_text(text = "You need to be an admin to do this.")
+        except Exception as e:
+            await message.reply_text(e)
+    
+
 @app.on_message(filters.command(["ban"]))
 async def ban (client , message):
     if message.chat.type == "private":
