@@ -276,6 +276,69 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
+app.on_message(filters.command(["promote"]))
+async def promote (client , message):
+    if message.chat.type == "private":
+        await message.reply_text("This command is made to be used in group chats, not in pm!")
+    else:
+        try:
+            get =await client.get_chat_member(message.chat.id,message.from_user.id) 
+            status = get. status 
+            chat_id = message.chat.id
+            message_id = message.reply_to_message.message_id
+            cmd_user = ["administrator","creator"] 
+            if status in cmd_user:
+                user_id = message.reply_to_message.from_user.id
+                await app.promote_chat_member(chat_id, user_id)
+                await app.send_message(chat_id, "promoted!")
+            else:
+                await message.reply_text("You/I don't have enough rights!!")
+        except Exception as e:
+            await message.reply_text(e)
+
+@app.on_message(filters.command(["pin"]))
+async def pin (client , message):
+    if message.chat.type == "private":
+        await message.reply_text("This command is made to be used in group chats, not in pm!")
+    else:
+            try:
+                get =await client.get_chat_member(message.chat.id,message.from_user.id) 
+                status = get. status 
+                chat_id = message.chat.id
+                message_id = message.reply_to_message.message_id
+                cmd_user = ["administrator","creator"] 
+                if status in cmd_user:
+                    await app.pin_chat_message(chat_id, message_id)
+                    await message.reply_text(text = "Pinned!")
+                
+                else:
+                    await message.reply_text('Only Admin Can Pin Messages!')
+            except Exception as e:
+                    await message.reply_text(e)
+
+@app.on_message(filters.command(["admintitle"]))
+async def adminTITLE(client , message):
+    if message.chat.type == "private":
+        await message.reply_text("This command is made to be used in group chats, not in pm!")
+    else:
+    
+        chat_id = message.chat.id
+        get =await client.get_chat_member(message.chat.id,message.from_user.id) 
+        status = get.status
+        cmd_user = ["administrator","creator"]
+        msg = message.text
+        title = msg.split(' ')[1]
+        user_id = message.reply_to_message.from_user.id
+        try:
+            if status in cmd_user:
+                await app.set_administrator_title(chat_id, user_id, title)
+                await message.reply_text("title updated")
+            else:
+                await app.send_message(chat_id, "you dont have enough rights , to make changes!!")
+        except Exception as e:
+                    await message.reply_text(e)
+
+
 @app.on_message(filters.command(["unban"]))
 async def unban (client , message):
     if message.chat.type == "private":
