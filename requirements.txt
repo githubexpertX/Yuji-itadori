@@ -1,3 +1,4 @@
+pickledb
 unidecode
 pyfiglet
 async_pymongo
