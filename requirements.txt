@@ -59,4 +59,3 @@ telegraph
 telegram
 unidecode
 pyfiglet
-psutil==5.9.0
