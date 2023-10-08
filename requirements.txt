@@ -1,3 +1,4 @@
+pyrogram1
 pickledb
 unidecode
 pyfiglet
