@@ -227,45 +227,6 @@ async def run(client, message):
 async def eye(client, message):
     await message.reply_text(choice(EYES))
 
-mongo = MongoClient(db_url)
-db = mongo.StringGen
-
-usersdb = db.users
-
-
-async def is_served_user(user_id: int) -> bool:
-    user = await usersdb.find_one({"user_id": user_id})
-    if not user:
-        return False
-    return True
-
-
-async def get_served_users() -> list:
-    users_list = []
-    async for user in usersdb.find({"user_id": {"$gt": 0}}):
-        users_list.append(user)
-    return users_list
-
-
-async def add_served_user(user_id: int):
-    is_served = await is_served_user(user_id)
-    if is_served:
-        return
-    return await usersdb.insert_one({"user_id": user_id})
-
-
-@app.on_message(filters.private & ~filters.service, group=1)
-async def users_sql(_, msg: Message):
-    await add_served_user(msg.from_user.id)
-
-
-@app.on_message(filters.user(OWNER_ID) & filters.command("stats"))
-async def _stats(_, msg: Message):
-    users = len(await get_served_users())
-    await msg.reply_text(f"» ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs ᴏғ sᴛʀɪɴɢ ɢᴇɴ ʙᴏᴛ :\n\n {users} ᴜsᴇʀs", quote=True)
-
-def filter(cmd: str):
-    return filters.private & filters.incoming & filters.command(cmd)
 
 @app.on_message(filter("string"))
 async def start(app: Client, msg: Message):
