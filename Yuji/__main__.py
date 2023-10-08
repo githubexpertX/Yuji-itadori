@@ -7,6 +7,9 @@ from bs4 import BeautifulSoup
 from os import getenv
 from pyrogram.types import Message
 from telethon import TelegramClient
+from functools import wraps
+from telegram import ChatAction
+from telegram.error import BadRequest
 from pyrogram import Client, filters
 from pyrogram1 import Client as Client1
 from asyncio.exceptions import TimeoutError
