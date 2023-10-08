@@ -1103,6 +1103,8 @@ help_message.append({"Module_Name": "title"})
 
 help_message.append({"Module_Name": "song"})
 
+help_message.append({"Module_Name": "TagAll"})
+
 class Help_Text:
     helpp = {
           "admin_help": """
@@ -1113,6 +1115,11 @@ class Help_Text:
 ➻ /id - __to get the user id__
 ➻ /purge - __purge the messages__
 
+""",
+          "TagAll_help":"""
+*Only for admins*
+
+❍ /tagall or @all '(reply to message or add another message) To mention all members in your group, without exception.'
 """,
           "string_help":"""
 ➻ /string - ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴜʀ sᴛʀɪɴɢ sᴇssɪᴏɴ
