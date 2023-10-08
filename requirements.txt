@@ -1,3 +1,16 @@
+telethon
+telegram
+requests
+aiohttp[speedups]
+bs4
+pymongo
+dnspython
+motor<2.4.0,>=2.1.0
+speedtest-cli
+redis
+telegraph
+odmantic
+tracemoepy
 pyrogram1
 pickledb
 unidecode
@@ -27,7 +40,6 @@ html2text==2020.1.16
 jikanpy==4.3.2
 lxml==4.9.3
 markdown2==2.4.10
-motor==3.3.1
 opencv-python-headless==4.8.0.76
 pillow==9.5.0
 pretty_errors==1.2.25
