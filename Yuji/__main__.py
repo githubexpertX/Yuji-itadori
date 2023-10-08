@@ -17,7 +17,6 @@ from urllib.parse import urlparse
 import wget
 from pyrogram import filters
 from pyrogram.types import Message
-from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 import io
 import os
@@ -34,7 +33,7 @@ from pathlib import Path
 from pymongo import MongoClient
 from telethon import events
 from pyrogram import filters 
-from youtube_search import YoutubeSearch 
+from youtube_search import YoutubeSearch, SearchVideos
 import traceback
 import sys
 from html import escape
