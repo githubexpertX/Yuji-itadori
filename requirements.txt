@@ -1,4 +1,3 @@
-psutil==5.9.4
 unidecode
 pyfiglet
 async_pymongo
