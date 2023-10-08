@@ -61,3 +61,4 @@ unidecode
 pyfiglet
 yt_dlp
 youtube_search
+pickledb
