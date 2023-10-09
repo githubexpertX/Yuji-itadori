@@ -27,6 +27,7 @@ redis
 telegraph
 odmantic
 tracemoepy
+py-tgcalls==0.9.7
 future
 emoji
 lxml
@@ -62,3 +63,4 @@ pyfiglet
 yt_dlp
 youtube_search
 pickledb
+git+https://github.com/alexmercerind/youtube-search-python@main
