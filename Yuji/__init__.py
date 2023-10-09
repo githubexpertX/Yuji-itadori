@@ -97,17 +97,17 @@ await Shiva.send_message(
             SUNAME,
             f" ᴍᴜsɪᴄ  \n\n ɪᴅ : `{BOT_ID}`\n ɴᴀᴍᴇ : {BOT_NAME}\n ᴜsᴇʀɴᴀᴍᴇ : @{BOT_USERNAME}",
         )
-    except:
+
         LOGGER.error(
             f"{BOT_NAME} failed to send message at @{SUNAME}, please go & check."
         )
 
     try:
-        await app2.send_message(
+        await Sonal.send_message(
             SUNAME,
             f" ᴍᴜsɪᴄ  \n\n ɪᴅ : `{ASS_ID}`\n ɴᴀᴍᴇ : {ASS_NAME}\n ᴜsᴇʀɴᴀᴍᴇ : @{ASS_USERNAME}",
         )
-    except:
+    
         LOGGER.error(
             f"{ASS_NAME} failed to send message at @{SUNAME}, please go & check."
         )
