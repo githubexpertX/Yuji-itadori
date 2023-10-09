@@ -168,8 +168,8 @@ API_HASH = getenv("API_HASH",'7ed8bb45ea845bef652aa0606584f413')
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "90"))
 
 
-PING_IMG = getenv("PING_IMG", "https://te.legra.ph/file/6f99c49bdb4679acad717.jpg")
-START_IMG = getenv("START_IMG", "https://te.legra.ph/file/f8ba75bdbb9931cbc8229.jpg")
+PING_IMG = getenv("PING_IMG", "https://telegra.ph/file/2a457256aed0ca9a4fcd5.jpg")
+START_IMG = getenv("START_IMG", "https://telegra.ph/file/16c5ea4390fcb09ac5a20.jpg")
 
 SESSION = getenv("SESSION", None)
 
