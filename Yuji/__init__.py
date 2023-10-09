@@ -2,6 +2,9 @@ import asyncio
 import logging
 import os
 import time
+from os import getenv
+
+from dotenv import load_dotenv
 
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
@@ -27,7 +30,7 @@ app3 = Client(
     bot_token=config.BOT_TOKEN,
 )
 
-PYRO_SESSION = os.environ['AQG2aTkAS47gsetpjbftb2GfcPSr-Si_hRtz_-8KWCaLzQrMsrh4Y71PvFB2c-BpI35Fnno1ZeLANaAmXxgyV4x1QTaCoo-BW4EO405VAXojWJoNKmLGeGUwSanAkm-4i55yXP74XzV3t330tVtuuXqx4m7Btsf5DWhW9SNBFiyjX5LZesYFCo0vAiKOK7YT9K_qReTBRHtAF27t92M43b8r6Yn38WKSp4a_VkUQwyewKlCE4DLTjrADA3wXJrvgDezjcXJij3u3rwK8ReVknyjKMeGPFtSnSfAyKOLD40KQxKLhjk-hISNVYpUTlykgO5pmu8U3T6r1LVsXXcakcBZxZ9pTzAAAAAGFN2o4AA']
+PYRO_SESSION = getenv("PYRO_SESSION","AQG2aTkAS47gsetpjbftb2GfcPSr-Si_hRtz_-8KWCaLzQrMsrh4Y71PvFB2c-BpI35Fnno1ZeLANaAmXxgyV4x1QTaCoo-BW4EO405VAXojWJoNKmLGeGUwSanAkm-4i55yXP74XzV3t330tVtuuXqx4m7Btsf5DWhW9SNBFiyjX5LZesYFCo0vAiKOK7YT9K_qReTBRHtAF27t92M43b8r6Yn38WKSp4a_VkUQwyewKlCE4DLTjrADA3wXJrvgDezjcXJij3u3rwK8ReVknyjKMeGPFtSnSfAyKOLD40KQxKLhjk-hISNVYpUTlykgO5pmu8U3T6r1LVsXXcakcBZxZ9pTzAAAAAGFN2o4AA")
 
 app2 = Client(
     PYRO_SESSION,
