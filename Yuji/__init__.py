@@ -107,7 +107,7 @@ try:
             f"{ASS_NAME} failed to send message at @{SUNAME}, please go & check."
         )
 
-    await Sonal.send_message(BOT_USERNAME, "/start")
+        await Sonal.send_message(BOT_USERNAME, "/start")
 
     LOGGER.info(f"[•] Bot Started As {BOT_NAME}.")
     LOGGER.info(f"[•] Assistant Started As {ASS_NAME}.")
