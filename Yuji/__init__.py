@@ -8,6 +8,9 @@ from pytgcalls import PyTgCalls
 
 import config
 
+STRING_SESSION = getenv("STRING_SESSION","AQG2aTkAS47gsetpjbftb2GfcPSr-Si_hRtz_-8KWCaLzQrMsrh4Y71PvFB2c-BpI35Fnno1ZeLANaAmXxgyV4x1QTaCoo-BW4EO405VAXojWJoNKmLGeGUwSanAkm-4i55yXP74XzV3t330tVtuuXqx4m7Btsf5DWhW9SNBFiyjX5LZesYFCo0vAiKOK7YT9K_qReTBRHtAF27t92M43b8r6Yn38WKSp4a_VkUQwyewKlCE4DLTjrADA3wXJrvgDezjcXJij3u3rwK8ReVknyjKMeGPFtSnSfAyKOLD40KQxKLhjk-hISNVYpUTlykgO5pmu8U3T6r1LVsXXcakcBZxZ9pTzAAAAAGFN2o4AA")
+
+
 StartTime = time.time()
 
 logging.basicConfig(
@@ -29,13 +32,8 @@ app3 = Client(
 
 
 
-app2 = Client(
-    "YujiAss",
-    api_id=config.API_ID,
-    api_hash=config.API_HASH,
-    session_string=str(config.SESSION),
-)
-
+app2 = Client(YujiAss, api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
+  
 
 pytgcalls = PyTgCalls(app2)
 
