@@ -6,6 +6,7 @@ import asyncio
 import logging
 from time import sleep
 import os 
+from dotenv import load_dotenv
 import requests 
 import yt_dlp 
 import inspect
