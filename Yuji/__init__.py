@@ -2,6 +2,10 @@ import asyncio
 import logging
 import os
 import time
+from os import getenv
+
+from dotenv import load_dotenv
+
 
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
