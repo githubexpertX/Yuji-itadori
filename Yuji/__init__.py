@@ -27,12 +27,14 @@ app3 = Client(
     bot_token=config.BOT_TOKEN,
 )
 
-app2 = Client(
-    "YujiAss",
-    api_id=config.API_ID,
-    api_hash=config.API_HASH,
-    string_session=str(config.SESSION),
-)
+
+session_string = 'AQG2aTkAS47gsetpjbftb2GfcPSr-Si_hRtz_-8KWCaLzQrMsrh4Y71PvFB2c-BpI35Fnno1ZeLANaAmXxgyV4x1QTaCoo-BW4EO405VAXojWJoNKmLGeGUwSanAkm-4i55yXP74XzV3t330tVtuuXqx4m7Btsf5DWhW9SNBFiyjX5LZesYFCo0vAiKOK7YT9K_qReTBRHtAF27t92M43b8r6Yn38WKSp4a_VkUQwyewKlCE4DLTjrADA3wXJrvgDezjcXJij3u3rwK8ReVknyjKMeGPFtSnSfAyKOLD40KQxKLhjk-hISNVYpUTlykgO5pmu8U3T6r1LVsXXcakcBZxZ9pTzAAAAAGFN2o4AA'
+api_id = '28731705'
+api_hash = '7ed8bb45ea845bef652aa0606584f413'
+
+
+app2 = Client("YujiAss", session_string=session_string, api_id=api_id, api_hash=api_hash)
+   
 
 pytgcalls = PyTgCalls(app2)
 
