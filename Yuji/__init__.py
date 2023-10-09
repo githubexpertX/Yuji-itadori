@@ -1,177 +1,19 @@
-from pyrogram import *
-from pyrogram.types import *
-from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
-from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
-from pyrogram import filters
-import os
-import asyncio
-from typing import Dict, Union
-from pyrogram import filters
-from pyrogram.types import Message
-from requests import post, get
-from pymongo import MongoClient
-from Yuji.db import MONGO_URL as db_url
-from typing import List, Any
-from telegraph import upload_file
-from pyrogram import filters
-from os import name
-from pyrogram.methods import messages
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from re import escape
-from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
-from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
-from pyrogram import __version__ as pyrover
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from telegram import __version__ as telever
-from telethon import __version__ as tlhver
-import random
-from datetime import datetime
-from pyrogram import filters
-import asyncio
-import importlib
-import os
-import logging
-from pyrogram import Client, filters
-from pyrogram.types import *
-import random
-import asyncio
-import logging
-from time import sleep
-import os 
-from dotenv import load_dotenv
-import requests 
-import yt_dlp 
-import inspect
-import glob
-import asyncio
-import os
-import time
-from urllib.parse import urlparse
-import wget
 import asyncio
 import logging
 import os
 import time
-from pyrogram import Client, filters
-from pytgcalls import PyTgCalls
-from pyrogram import filters
-from pyrogram.types import Message
-from yt_dlp import YoutubeDL
-import io
-import os
-import random
-import requests
-import asyncio
-from telethon import events
-from telethon.errors import UserNotParticipantError
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
-from PIL import Image, ImageDraw, ImageFont
-import re
-from pathlib import Path
-from pymongo import MongoClient
-from telethon import events
-from pyrogram import filters 
-from youtube_search import YoutubeSearch 
-import traceback
-import sys
-from html import escape
-import pickledb
-from telegram import ParseMode, TelegramError, Update
-from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
-from telegram.ext.dispatcher import run_async
-from bs4 import BeautifulSoup
-from os import getenv
-from pyrogram.types import Message
-from telethon import TelegramClient
-from functools import wraps
-from telegram import ChatAction
-from pyrogram import Client , filters
-import wget
-import os
-from pyrogram.types import InlineKeyboardButton , InlineKeyboardMarkup
-import psutil
-import requests
-import json
-import subprocess
-from telegram.error import BadRequest
-from pyrogram import Client, filters
-from pyrogram1 import Client as Client1
-from asyncio.exceptions import TimeoutError
-from telethon.sessions import StringSession
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import (
-    ApiIdInvalid,
-    PhoneNumberInvalid,
-    PhoneCodeInvalid,
-    PhoneCodeExpired,
-    SessionPasswordNeeded,
-    PasswordHashInvalid
-)
-from telegram import Chat, User
-from pyrogram1.errors import (
-    ApiIdInvalid as ApiIdInvalid1,
-    PhoneNumberInvalid as PhoneNumberInvalid1,
-    PhoneCodeInvalid as PhoneCodeInvalid1,
-    PhoneCodeExpired as PhoneCodeExpired1,
-    SessionPasswordNeeded as SessionPasswordNeeded1,
-    PasswordHashInvalid as PasswordHashInvalid1
-)
-from telethon.errors import (
-    ApiIdInvalidError,
-    PhoneNumberInvalidError,
-    PhoneCodeInvalidError,
-    PhoneCodeExpiredError,
-    SessionPasswordNeededError,
-    PasswordHashInvalidError
-)
-from pyrogram import Client, filters
-from pyrogram.types import *
-import random
-import traceback
-from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
-import asyncio
-from random import choice
-from requests import get
-import time, datetime
-from redis import Redis
-from os import getenv
-import pymongo
-from pyrogram import filters
-import os
-import logging
-from telethon import Button, events
-from telethon import TelegramClient
-import re
-import asyncio
-import time
-import asyncio
-import logging
-import os
-import time
-from os import getenv
-
-from dotenv import load_dotenv
-
 
 from pyrogram import Client, filters
 from pytgcalls import PyTgCalls
 
 import config
 
-STRING_SESSION = getenv("STRING_SESSION","AQG2aTkAS47gsetpjbftb2GfcPSr-Si_hRtz_-8KWCaLzQrMsrh4Y71PvFB2c-BpI35Fnno1ZeLANaAmXxgyV4x1QTaCoo-BW4EO405VAXojWJoNKmLGeGUwSanAkm-4i55yXP74XzV3t330tVtuuXqx4m7Btsf5DWhW9SNBFiyjX5LZesYFCo0vAiKOK7YT9K_qReTBRHtAF27t92M43b8r6Yn38WKSp4a_VkUQwyewKlCE4DLTjrADA3wXJrvgDezjcXJij3u3rwK8ReVknyjKMeGPFtSnSfAyKOLD40KQxKLhjk-hISNVYpUTlykgO5pmu8U3T6r1LVsXXcakcBZxZ9pTzAAAAAGFN2o4AA")
-API_ID = int(getenv("API_ID",'28731705'))
-API_HASH = getenv("API_HASH",'7ed8bb45ea845bef652aa0606584f413')
-
-
 StartTime = time.time()
 
 logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
     datefmt="%d-%b-%y %H:%M:%S",
-    handlers=[logging.FileHandler("yujilogs.txt"), logging.StreamHandler()],
+    handlers=[logging.FileHandler("fallenlogs.txt"), logging.StreamHandler()],
     level=logging.INFO,
 )
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
@@ -185,10 +27,12 @@ app3 = Client(
     bot_token=config.BOT_TOKEN,
 )
 
-
-
-app2 = Client("YujiAss", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
-  
+app2 = Client(
+    "YujiAss",
+    api_id=config.API_ID,
+    api_hash=config.API_HASH,
+    session_string=str(config.SESSION),
+)
 
 pytgcalls = PyTgCalls(app2)
 
