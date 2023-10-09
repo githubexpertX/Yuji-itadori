@@ -1,3 +1,37 @@
+from pyrogram import *
+from pyrogram.types import *
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
+from pyrogram import filters
+import os
+import asyncio
+from typing import Dict, Union
+from pyrogram import filters
+from pyrogram.types import Message
+from requests import post, get
+from pymongo import MongoClient
+from Yuji.db import MONGO_URL as db_url
+from typing import List, Any
+from telegraph import upload_file
+from pyrogram import filters
+from os import name
+from pyrogram.methods import messages
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from re import escape
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
+from pyrogram import __version__ as pyrover
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from telegram import __version__ as telever
+from telethon import __version__ as tlhver
+import random
+from datetime import datetime
+from pyrogram import filters
+import asyncio
+import importlib
+import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import *
