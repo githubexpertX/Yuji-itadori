@@ -1,3 +1,118 @@
+import logging
+from pyrogram import Client, filters
+from pyrogram.types import *
+import random
+import asyncio
+import logging
+from time import sleep
+import os 
+from dotenv import load_dotenv
+import requests 
+import yt_dlp 
+import inspect
+import glob
+import asyncio
+import os
+import time
+from urllib.parse import urlparse
+import wget
+import asyncio
+import logging
+import os
+import time
+from pyrogram import Client, filters
+from pytgcalls import PyTgCalls
+from pyrogram import filters
+from pyrogram.types import Message
+from yt_dlp import YoutubeDL
+import io
+import os
+import random
+import requests
+import asyncio
+from telethon import events
+from telethon.errors import UserNotParticipantError
+from telethon.tl.functions.channels import GetParticipantRequest
+from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator
+from PIL import Image, ImageDraw, ImageFont
+import re
+from pathlib import Path
+from pymongo import MongoClient
+from telethon import events
+from pyrogram import filters 
+from youtube_search import YoutubeSearch 
+import traceback
+import sys
+from html import escape
+import pickledb
+from telegram import ParseMode, TelegramError, Update
+from telegram.ext import Updater, MessageHandler, CommandHandler, Filters
+from telegram.ext.dispatcher import run_async
+from bs4 import BeautifulSoup
+from os import getenv
+from pyrogram.types import Message
+from telethon import TelegramClient
+from functools import wraps
+from telegram import ChatAction
+from pyrogram import Client , filters
+import wget
+import os
+from pyrogram.types import InlineKeyboardButton , InlineKeyboardMarkup
+import psutil
+import requests
+import json
+import subprocess
+from telegram.error import BadRequest
+from pyrogram import Client, filters
+from pyrogram1 import Client as Client1
+from asyncio.exceptions import TimeoutError
+from telethon.sessions import StringSession
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import (
+    ApiIdInvalid,
+    PhoneNumberInvalid,
+    PhoneCodeInvalid,
+    PhoneCodeExpired,
+    SessionPasswordNeeded,
+    PasswordHashInvalid
+)
+from telegram import Chat, User
+from pyrogram1.errors import (
+    ApiIdInvalid as ApiIdInvalid1,
+    PhoneNumberInvalid as PhoneNumberInvalid1,
+    PhoneCodeInvalid as PhoneCodeInvalid1,
+    PhoneCodeExpired as PhoneCodeExpired1,
+    SessionPasswordNeeded as SessionPasswordNeeded1,
+    PasswordHashInvalid as PasswordHashInvalid1
+)
+from telethon.errors import (
+    ApiIdInvalidError,
+    PhoneNumberInvalidError,
+    PhoneCodeInvalidError,
+    PhoneCodeExpiredError,
+    SessionPasswordNeededError,
+    PasswordHashInvalidError
+)
+from pyrogram import Client, filters
+from pyrogram.types import *
+import random
+import traceback
+from pyrogram.types import CallbackQuery, InlineKeyboardMarkup
+import asyncio
+from random import choice
+from requests import get
+import time, datetime
+from redis import Redis
+from os import getenv
+import pymongo
+from pyrogram import filters
+import os
+import logging
+from telethon import Button, events
+from telethon import TelegramClient
+import re
+import asyncio
+import time
 import asyncio
 import logging
 import os
