@@ -219,7 +219,7 @@ Sonal = Client(
     "YujiAss",
     api_id=API_ID,
     api_hash=API_HASH,
-    session_string=str(SESSION),
+    session_string=SESSION,
 )
 
 pytgcalls = PyTgCalls(Sonal)
