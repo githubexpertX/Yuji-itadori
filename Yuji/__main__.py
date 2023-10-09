@@ -1335,6 +1335,11 @@ def info(_, message):
 
 sudos = [6647321265]
 
-print("yooo babe im alive.")
+print("➖➖➖➖➖➖➖➖➖➖➖➖")
+print(f"⚡  Bot ⚡ [INFO] : Group Username @Neiman_X_Support")
+print(f"⚡  Bot ⚡ [INFO] : Version - 69.69.2")
+print(f"⚡  Bot ⚡ [INFO]:  Bot Version - 1.2.4")
+print(f"⚡  Bot ⚡ [INFO]:  Pyrogram Version - 6.8.9")
+print("➖➖➖➖➖➖➖➖➖➖➖➖")
 
 app.run()
