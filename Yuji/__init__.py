@@ -28,7 +28,6 @@ app3 = Client(
 )
 
 
-pytgcalls = PyTgCalls(app2)
 
 app2 = Client(
     "YujiAss",
@@ -37,6 +36,8 @@ app2 = Client(
     session_string=str(config.SESSION),
 )
 
+
+pytgcalls = PyTgCalls(app2)
 
 SUDOERS = filters.user()
 SUNAME = config.SUPPORT_CHAT.split("me/")[1]
