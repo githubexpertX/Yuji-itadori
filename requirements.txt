@@ -1,6 +1,7 @@
 dnspython==2.2.1
 motor
 psutil==5.9.4
+asyncio==3.4.3
 pyromod==1.5
 pyrogram1==0.1.0
 python-dotenv==0.21.0
@@ -10,6 +11,8 @@ werkzeug==2.0.3
 aiohttp
 pyrogram==1.4.16
 pymongo
+aiofiles==23.2.1
+numpy==1.26.0
 requests
 dnspython
 tgcrypto==1.2.2
