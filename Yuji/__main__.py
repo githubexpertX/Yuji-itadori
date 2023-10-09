@@ -159,6 +159,28 @@ SUPPORT_CHAT = "fuck_uff_XD"
 
 BOT_NAME = "@YuJi_ItAdOrI_RoBoT"
 
+load_dotenv()
+
+
+API_ID = int(getenv("API_ID",'28731705'))
+API_HASH = getenv("API_HASH",'7ed8bb45ea845bef652aa0606584f413')
+
+DURATION_LIMIT = int(getenv("DURATION_LIMIT", "90"))
+
+
+PING_IMG = getenv("PING_IMG", "https://te.legra.ph/file/6f99c49bdb4679acad717.jpg")
+START_IMG = getenv("START_IMG", "https://te.legra.ph/file/f8ba75bdbb9931cbc8229.jpg")
+
+SESSION = getenv("SESSION", None)
+
+SUPPORT_GRP = getenv("SUPPORT_CHAT", "https://t.me/fuck_uff_XD")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/fuck_uff_XD")
+
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "6647321265").split()))
+
+
+FAILED = "https://telegra.ph/file/24981f7943d702af1851a.jpg"
+
 ELPP_TEXT = ("ʜᴇʟʟᴏ [sɪʀ](tg://settings)\n\nʏᴜᴊɪ ɪᴛᴀᴅᴏʀɪ ʜᴇʀᴇ\nɪᴍ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ\nɪ ᴡɪʟʟ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ \n\nɪғ ʏᴏᴜ ɴᴏᴛɪᴄᴇ ᴀɴʏ ᴘʀᴏʙʟᴇᴍ ᴡɪᴛʜ ᴛʜᴇ ʙᴏᴛ, ʏᴏᴜ ᴄᴀɴ ʀᴇᴘᴏʀᴛ ɪᴛ ɪɴ ᴍʏ [sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ](@fuck_uff_XD) \n\n sᴇɴᴅ /help ᴛᴏ ᴏᴘᴇɴ ʜᴇʟᴘ ᴍᴇɴᴜ ♡.")
 
 EMOJIOS = [ 
