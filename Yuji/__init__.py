@@ -27,15 +27,16 @@ app3 = Client(
     bot_token=config.BOT_TOKEN,
 )
 
+
+pytgcalls = PyTgCalls(app2)
+
 app2 = Client(
     "YujiAss",
     api_id=config.API_ID,
     api_hash=config.API_HASH,
     session_string=str(config.SESSION),
-    no_updates=True,
 )
 
-pytgcalls = PyTgCalls(app2)
 
 SUDOERS = filters.user()
 SUNAME = config.SUPPORT_CHAT.split("me/")[1]
