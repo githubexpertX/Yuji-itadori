@@ -36,7 +36,7 @@ app3 = Client(
 
 
 
-app2 = Client(YujiAss, api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
+app2 = Client("YujiAss", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION)
   
 
 pytgcalls = PyTgCalls(app2)
