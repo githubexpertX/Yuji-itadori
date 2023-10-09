@@ -32,6 +32,7 @@ app2 = Client(
     api_id=config.API_ID,
     api_hash=config.API_HASH,
     session_string=str(config.SESSION),
+    no_updates=True,
 )
 
 pytgcalls = PyTgCalls(app2)
